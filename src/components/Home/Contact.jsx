@@ -6,6 +6,7 @@ import {
   FaArrowRight,
   FaLinkedinIn,
 } from "react-icons/fa";
+import SDImage from "../../assets/SD.png";
 
 const Contact = () => {
   return (
@@ -17,7 +18,7 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-center">
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full lg:w-1/3 text-center">
           <img
-            src="/src/assets/SD PNG.png"
+           src={SDImage}
             alt="Sourav Debnath"
             className="w-40 h-40 object-cover rounded-lg mx-auto"
           />

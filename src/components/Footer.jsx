@@ -5,7 +5,7 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-
+import SDImage from "../assets/SD.png";
 const Footer = () => {
   return (
     <footer className="bg-[#0b1120] text-gray-300 py-10 px-6">
@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/SD PNG.png"
+              src={SDImage}
               alt="Profile"
               className="w-12 h-12 rounded-full border-2 border-gray-500"
             />

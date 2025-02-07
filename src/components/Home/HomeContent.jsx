@@ -1,5 +1,6 @@
 import { FaFacebookF, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
+import SDImage from "../../assets/SD.png";
 export default function HomeContent() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 md:py-12">
@@ -60,7 +61,7 @@ export default function HomeContent() {
       <div className="flex justify-center lg:w-1/2">
         <div className="relative w-64 h-64 md:w-80 md:h-80 border-4 border-green-400 rounded-full overflow-hidden flex items-center justify-center">
           <img
-            src="/src/assets/SD PNG.png"
+            src={SDImage}
             alt="Sourav Debnath"
             className="w-full h-full object-cover"
           />

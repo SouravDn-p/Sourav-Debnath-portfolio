@@ -1,12 +1,16 @@
 import { FaDownload, FaGraduationCap, FaLaptopCode } from "react-icons/fa";
+import SDImage from "../../assets/SD.png";
 
 const AboutMe = () => {
   return (
-    <div id="about" className="min-h-screen bg-gray-900 text-white flex flex-col lg:flex-row items-center justify-center px-6 py-12">
+    <div
+      id="about"
+      className="min-h-screen bg-gray-900 text-white flex flex-col lg:flex-row items-center justify-center px-6 py-12"
+    >
       <div className="lg:w-1/3 flex justify-center pb-6">
         <div className="w-64 h-64 md:w-80 md:h-80 border-4 border-blue-400">
           <img
-            src="/src/assets/SD PNG.png"
+            src={SDImage}
             alt="Sourav Debnath"
             className="w-full h-full object-cover"
           />

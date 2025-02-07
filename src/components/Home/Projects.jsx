@@ -1,40 +1,53 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { SiReact, SiMongodb, SiFirebase, SiTailwindcss } from "react-icons/si";
+import {
+  SiReact,
+  SiMongodb,
+  SiFirebase,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+  SiJavascript,
+} from "react-icons/si";
+import PortfolioImage from "../../assets/portfolio.png";
+import DonateImage from "../../assets/donate.png"; // Replace with actual image
+import HotGadgetImage from "../../assets/hot-gadget.png"; // Replace with actual image
 
 const projects = [
   {
     id: 1,
     name: "Portfolio Website",
-    image: "/src/assets/portfolio.png",
+    image: `${PortfolioImage}`,
     description:
       "A personal portfolio website showcasing my projects and skills.",
     features: ["Fully Responsive", "Dark Mode", "Downloadable Resume"],
     techStack: [SiReact, SiTailwindcss],
-    liveLink: "https://portfolio.com",
-    githubClient: "https://github.com/user/portfolio-client",
+    liveLink: "https://souravdebnath246.netlify.app/",
+    githubClient: "https://github.com/SouravDn-p/Sourav-Debnath-portfolio",
     githubServer: null,
   },
   {
     id: 2,
-    name: "E-Commerce App",
-    image: "/assets/ecommerce.png",
+    name: "Donate Bangladesh",
+    image: `${DonateImage}`,
     description:
-      "A full-stack e-commerce website with authentication and payment features.",
-    features: ["User Authentication", "Stripe Payment", "Admin Dashboard"],
-    techStack: [SiReact, SiMongodb, SiFirebase, SiTailwindcss],
-    liveLink: "https://ecommerce.com",
-    githubClient: "https://github.com/user/ecommerce-client",
-    githubServer: "https://github.com/user/ecommerce-server",
+      "A simple and responsive donation platform for emergency relief efforts in Bangladesh.",
+    features: ["Secure Payment", "Mobile Responsive", "Fast & Lightweight"],
+    techStack: [SiHtml5, SiTailwindcss, SiJavascript],
+    liveLink: "https://souravdn-p.github.io/SD_ASSIGNMENT_05/",
+    githubClient: "https://github.com/SouravDn-p/SD_ASSIGNMENT_05",
+    githubServer: null,
   },
   {
     id: 3,
-    name: "Blog Website",
-    image: "/assets/blog.png",
-    description: "A blog platform where users can create and read articles.",
-    features: ["Rich Text Editor", "Firebase Auth", "Real-time Updates"],
-    techStack: [SiReact, SiFirebase, SiTailwindcss],
-    liveLink: "https://blog.com",
-    githubClient: "https://github.com/user/blog-client",
+    name: "Hot Gadget - E-Commerce Website",
+    image: `${HotGadgetImage}`,
+    description:
+      "A modern e-commerce site showcasing smartphones & laptops with a responsive design.",
+    features: ["Product Filtering", "Cart System", "Responsive UI"],
+    techStack: [SiHtml5, SiCss3, SiBootstrap, SiJavascript],
+    liveLink: "https://souravdn-p.github.io/Hot-gadget/",
+    githubClient: "https://github.com/SouravDn-p/Hot-gadget",
     githubServer: null,
   },
 ];
@@ -95,17 +108,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center text-green-400 hover:text-green-300"
                   >
-                    <FaGithub className="mr-2" /> GitHub Client side
-                  </a>
-                )}
-                {project.githubServer && (
-                  <a
-                    href={project.githubServer}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-green-400 hover:text-green-300"
-                  >
-                    <FaGithub className="mr-2" /> GitHub Server
+                    <FaGithub className="mr-2" /> GitHub Client
                   </a>
                 )}
               </div>
