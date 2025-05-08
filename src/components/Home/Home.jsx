@@ -5,13 +5,15 @@ import HomeContent from "./HomeContent";
 import EducationExperience from "./EducationExperience";
 import Contact from "./Contact";
 import Footer from "../Footer";
+import SdSkills from "../polished/SdSkills";
 
 const Home = () => {
   return (
     <div id="home">
       <HomeContent />
       <About />
-      <Skills />
+      <SdSkills />
+      {/* <Skills /> */}
       <EducationExperience />
       <Projects />
       <Contact />
