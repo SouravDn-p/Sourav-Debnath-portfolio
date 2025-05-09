@@ -5,15 +5,15 @@
 .card {
   padding: 2em;
 }
-
 .glass {
-  background: rgba(17, 24, 39, 0.7); /* #111827 with 70% opacity */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border for better separation */
-  border-radius: 16px; /* Optional: rounded corners for a soft look */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+  background: rgba(55, 19, 75, 0.6); /* Based on #37134b with 60% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle light border */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow for contrast */
 }
+
 
 .logo-section {
   background: linear-gradient(
