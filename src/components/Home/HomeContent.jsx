@@ -6,47 +6,47 @@
 //   return (
 //     <div className="min-h-screen bg-black text-white flex flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 md:py-12 relative overflow-hidden">
 //       {/* Futuristic Robotic Background */}
-      // <div className="absolute inset-0 z-0 overflow-hidden">
-      //   <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-      //     {/* SVG for subtle circuit-like pattern */}
-      //     <svg
-      //       className="absolute inset-0 w-full h-full opacity-10"
-      //       xmlns="http://www.w3.org/2000/svg"
-      //     >
-      //       <defs>
-      //         <pattern
-      //           id="circuit-pattern"
-      //           width="40"
-      //           height="40"
-      //           patternUnits="userSpaceOnUse"
-      //         >
-      //           <path
-      //             d="M 10 0 L 10 10 L 0 10 M 30 0 L 30 10 L 40 10 M 0 30 L 10 30 L 10 40 M 40 30 L 30 30 L 30 40 M 20 20 L 20 30 M 20 20 L 30 20"
-      //             stroke="#ffffff"
-      //             strokeWidth="0.5"
-      //             fill="none"
-      //             opacity="0.3"
-      //           />
-      //           <circle cx="10" cy="10" r="1" fill="#ffffff" opacity="0.4" />
-      //           <circle cx="30" cy="10" r="1" fill="#ffffff" opacity="0.4" />
-      //           <circle cx="10" cy="30" r="1" fill="#ffffff" opacity="0.4" />
-      //           <circle cx="30" cy="30" r="1" fill="#ffffff" opacity="0.4" />
-      //         </pattern>
-      //       </defs>
-      //       <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
-      //     </svg>
+// <div className="absolute inset-0 z-0 overflow-hidden">
+//   <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+//     {/* SVG for subtle circuit-like pattern */}
+//     <svg
+//       className="absolute inset-0 w-full h-full opacity-10"
+//       xmlns="http://www.w3.org/2000/svg"
+//     >
+//       <defs>
+//         <pattern
+//           id="circuit-pattern"
+//           width="40"
+//           height="40"
+//           patternUnits="userSpaceOnUse"
+//         >
+//           <path
+//             d="M 10 0 L 10 10 L 0 10 M 30 0 L 30 10 L 40 10 M 0 30 L 10 30 L 10 40 M 40 30 L 30 30 L 30 40 M 20 20 L 20 30 M 20 20 L 30 20"
+//             stroke="#ffffff"
+//             strokeWidth="0.5"
+//             fill="none"
+//             opacity="0.3"
+//           />
+//           <circle cx="10" cy="10" r="1" fill="#ffffff" opacity="0.4" />
+//           <circle cx="30" cy="10" r="1" fill="#ffffff" opacity="0.4" />
+//           <circle cx="10" cy="30" r="1" fill="#ffffff" opacity="0.4" />
+//           <circle cx="30" cy="30" r="1" fill="#ffffff" opacity="0.4" />
+//         </pattern>
+//       </defs>
+//       <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+//     </svg>
 
-      //     {/* Subtle glowing elements */}
-      //     <div className="absolute top-20 left-10 w-64 h-64 bg-gray-700 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse"></div>
-      //     <div className="absolute top-40 right-10 w-64 h-64 bg-gray-600 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse animation-delay-2000"></div>
-      //     <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-gray-500 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse animation-delay-4000"></div>
+//     {/* Subtle glowing elements */}
+//     <div className="absolute top-20 left-10 w-64 h-64 bg-gray-700 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse"></div>
+//     <div className="absolute top-40 right-10 w-64 h-64 bg-gray-600 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse animation-delay-2000"></div>
+//     <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-gray-500 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-pulse animation-delay-4000"></div>
 
-      //     {/* Minimal floating particles */}
-      //     <div className="absolute top-10 left-20 w-3 h-3 bg-gray-300 rounded-full animate-float shadow-[0_0_5px_#ffffff]"></div>
-      //     <div className="absolute bottom-30 right-30 w-2 h-2 bg-gray-400 rounded-full animate-float animation-delay-1500 shadow-[0_0_5px_#ffffff]"></div>
-      //     <div className="absolute top-60 left-3/4 w-4 h-4 bg-gray-500 rounded-full animate-float animation-delay-3000 shadow-[0_0_5px_#ffffff]"></div>
-      //   </div>
-      // </div>
+//     {/* Minimal floating particles */}
+//     <div className="absolute top-10 left-20 w-3 h-3 bg-gray-300 rounded-full animate-float shadow-[0_0_5px_#ffffff]"></div>
+//     <div className="absolute bottom-30 right-30 w-2 h-2 bg-gray-400 rounded-full animate-float animation-delay-1500 shadow-[0_0_5px_#ffffff]"></div>
+//     <div className="absolute top-60 left-3/4 w-4 h-4 bg-gray-500 rounded-full animate-float animation-delay-3000 shadow-[0_0_5px_#ffffff]"></div>
+//   </div>
+// </div>
 
 //       {/* Content */}
 //       <div className="text-center ml-0 py-0 md:pt-16 md:ml-12 lg:text-left lg:w-1/2 z-10 relative">
@@ -148,7 +148,7 @@
 
 import { FaFacebookF, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import SDImage from "../../assets/SD.png";
+import SDImage from "../../assets/sourav.jpg";
 import { useEffect, useRef } from "react";
 
 export default function HomeContent() {
@@ -389,8 +389,6 @@ export default function HomeContent() {
         </div>
       </div>
 
-    
-
       <div className="flex justify-center lg:w-1/2 z-10 relative">
         <div className="relative w-64 h-64 md:w-80 md:h-80 border-4 border-cyan-400 rounded-full overflow-hidden flex items-center justify-center bg-gray-800">
           <img
@@ -398,12 +396,11 @@ export default function HomeContent() {
             alt="Sourav Debnath"
             className="w-full h-full object-cover filter brightness-110"
           />
-          
+
           {/* Animated ring */}
           <div className="absolute w-full h-full border-8 border-cyan-400/30 rounded-full animate-spin-slow"></div>
         </div>
         <div className="absolute w-full h-full border-8 border-cyan-400/30 rounded-full animate-spin-slow"></div>
-
       </div>
 
       {/* Inject CSS */}

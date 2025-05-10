@@ -277,7 +277,7 @@ const SdSkills = () => {
 
   return (
     <section
-      id="skills-section"
+      id="skills"
       className="relative text-white py-20 px-6 overflow-hidden min-h-screen"
     >
       {/* Canvas Background */}

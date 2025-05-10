@@ -311,7 +311,7 @@ const Projects = () => {
 
   return (
     <section
-      id="projects-section"
+      id="projects"
       className="relative text-white py-16 px-6 overflow-hidden"
     >
       {/* Canvas Background with Parallax */}

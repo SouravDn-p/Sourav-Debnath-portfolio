@@ -297,7 +297,7 @@ const ExperienceEducation = () => {
 
   return (
     <section
-      id="experience-education-section"
+      id="education"
       className="relative text-white py-24 px-6 overflow-hidden"
       ref={containerRef}
     >

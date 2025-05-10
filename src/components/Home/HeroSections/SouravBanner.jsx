@@ -11,7 +11,8 @@ const SouravBanner = () => {
   const canvasRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClicking, setIsClicking] = useState(false);
-  const [ripples, setRipples] = useState([]);
+  const ripplesRef = useRef([]); // Use ref to manage ripples internally
+  const [rippleTrigger, setRippleTrigger] = useState(0); // State to trigger re-render when ripples change
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -84,7 +85,7 @@ const SouravBanner = () => {
         }
       }
       ctx.closePath();
-      ctx.strokeStyle = `hsla(${hue}, 100%, 70%, ${opacity})`;
+      ctx.strokeStyle = `hsla(${hue}, 100%, 60%, ${opacity})`;
       ctx.stroke();
     };
 
@@ -97,10 +98,11 @@ const SouravBanner = () => {
 
     const handleMouseDown = (e) => {
       setIsClicking(true);
-      setRipples((prev) => [
-        ...prev,
+      ripplesRef.current = [
+        ...ripplesRef.current,
         { x: e.clientX, y: e.clientY, size: 0, maxSize: 300, opacity: 1 },
-      ]);
+      ];
+      setRippleTrigger((prev) => prev + 1); // Trigger re-render
       for (let i = 0; i < 30; i++) {
         createParticle(e.clientX, e.clientY);
       }
@@ -128,7 +130,7 @@ const SouravBanner = () => {
         canvas.width,
         canvas.height
       );
-      gradient.addColorStop(0, `hsl(${280 + Math.sin(time) * 10}, 70%, 10%)`);
+      gradient.addColorStop(0, `hsl(${280 + Math.sin(time) * 10}, 50%, 7%)`);
       gradient.addColorStop(
         0.5,
         `hsl(${290 + Math.sin(time + 1) * 10}, 70%, 8%)`
@@ -153,7 +155,7 @@ const SouravBanner = () => {
 
       hexagons.forEach((hex) => {
         const dx = mousePosition.x - hex.x;
-        const dy = mousePosition.ycosm - hex.y;
+        const dy = mousePosition.y - hex.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const maxDistance = 300;
 
@@ -186,20 +188,19 @@ const SouravBanner = () => {
         ctx.fill();
       });
 
-      setRipples((prevRipples) =>
-        prevRipples
-          .map((ripple) => ({
-            ...ripple,
-            size: ripple.size + 10,
-            opacity: ripple.opacity - 0.02,
-          }))
-          .filter((ripple) => ripple.opacity > 0)
-      );
+      // Update ripples using ref
+      ripplesRef.current = ripplesRef.current
+        .map((ripple) => ({
+          ...ripple,
+          size: ripple.size + 10,
+          opacity: ripple.opacity - 0.02,
+        }))
+        .filter((ripple) => ripple.opacity > 0);
 
-      ripples.forEach((ripple) => {
+      ripplesRef.current.forEach((ripple) => {
         ctx.beginPath();
         ctx.arc(ripple.x, ripple.y, ripple.size, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(147, 51, 234, ${ripple.opacity})`;
+        ctx.strokeStyle = `rgba(88, 24, 169, ${ripple.opacity})`; // Deeper purple
         ctx.lineWidth = 2;
         ctx.stroke();
       });
@@ -235,7 +236,7 @@ const SouravBanner = () => {
       window.removeEventListener("mouseup", handleMouseUp);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [mousePosition, isClicking, ripples]);
+  }, [mousePosition, isClicking]); // Removed ripples from dependencies
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
@@ -287,7 +288,7 @@ const SouravBanner = () => {
             technologies.
           </p>
           <div className="mt-4 md:mt-6">
-            <button className="bg-green-500 px-4 py-2 md:px-6 md:py-3 rounded-md text-white hover:bg-green-600 transition duration-300 shadow-[0_0_15px_#00ff00] text-sm md:text-base">
+            <button className="bg-teal-600 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-md text-white hover:bg-purple-900 transition duration-300 shadow-purple-400 text-sm md:text-base border border-white/10">
               Download CV
             </button>
           </div>
@@ -296,7 +297,7 @@ const SouravBanner = () => {
               href="https://www.facebook.com/Sourav.Debnath.246"
               target="_blank"
               rel="noreferrer"
-              className="text-green-400 text-xl md:text-2xl hover:text-green-500 transition duration-300 hover:shadow-[0_0_10px_#00ff00]"
+              className="text-teal-400 text-xl md:text-2xl hover:text-teal-400 transition duration-300 hover:shadow-[0_0_10px_rgba(45,212,191,0.6)]"
             >
               <FaFacebookF />
             </a>
@@ -304,13 +305,13 @@ const SouravBanner = () => {
               href="https://www.linkedin.com/in/sourav-debnath-5b43902b7/"
               target="_blank"
               rel="noreferrer"
-              className="text-green-400 text-xl md:text-2xl hover:text-green-500 transition duration-300 hover:shadow-[0_0_10px_#00ff00]"
+              className="text-teal-400 text-xl md:text-2xl hover:text-teal-400 transition duration-300 hover:shadow-[0_0_10px_rgba(45,212,191,0.6)]"
             >
               <FaLinkedinIn />
             </a>
             <a
               href="mailto:sdsouravdebnath26@gmail.com"
-              className="text-green-400 text-xl md:text-2xl hover:text-green-500 transition duration-300 hover:shadow-[0_0_10px_#00ff00]"
+              className="text-teal-400 text-xl md:text-2xl hover:text-teal-400 transition duration-300 hover:shadow-[0_0_10px_rgba(45,212,191,0.6)]"
             >
               <FaEnvelope />
             </a>
@@ -337,7 +338,7 @@ const SouravBanner = () => {
 
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-purple-400 animate-bounce z-10"
         aria-label="Scroll down"
       >
         <ChevronDown size={32} />
