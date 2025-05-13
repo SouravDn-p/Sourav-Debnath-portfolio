@@ -13,7 +13,14 @@
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow for contrast */
 }
-
+.btnGlass {
+  background: rgba(20, 184, 166, 1); /* Tailwind teal-500 with 60% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle light border */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow for contrast */
+}
 
 .logo-section {
   background: linear-gradient(

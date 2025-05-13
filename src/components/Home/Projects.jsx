@@ -110,7 +110,7 @@ const Projects = () => {
         >
           <div className="relative bg-gray-900/60 border border-cyan-500/30 rounded-xl p-6 shadow-xl mb-12">
             <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 text-center">
-              Contact Me
+              My Projects
             </h2>
           </div>
         </motion.h2>

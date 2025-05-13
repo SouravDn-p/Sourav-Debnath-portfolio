@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from "react";
 import {
   FaFacebookF,
@@ -126,7 +128,10 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="text-white px-6 md:px-24 py-8 relative">
+    <div
+      id="contact"
+      className="text-white px-4 sm:px-6 md:px-12 lg:px-24 py-6 sm:py-8 relative max-w-7xl mx-auto"
+    >
       <motion.div
         className="relative z-10"
         initial={{ opacity: 0, y: 30 }}
@@ -135,29 +140,29 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.h2
-          className="text-3xl font-bold mb-1 text-center"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-center"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <div className="relative bg-gray-900/40 border border-cyan-500/30 rounded-xl p-6 shadow-xl mb-12">
-            <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 text-center">
+          <div className="relative bg-gray-900/40 border border-cyan-500/30 rounded-xl p-4 sm:p-6 shadow-xl mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 text-center">
               Contact Me
             </h2>
           </div>
         </motion.h2>
 
         <motion.div
-          className="w-16 h-1 bg-gradient-to-r from-teal-400 to-teal-500 mx-auto mb-4 rounded-full"
+          className="w-12 sm:w-16 h-1 bg-gradient-to-r from-teal-400 to-teal-500 mx-auto mb-4 rounded-full"
           initial={{ width: 0 }}
-          whileInView={{ width: 64 }}
+          whileInView={{ width: "3rem" }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         />
 
         <motion.div
-          className="flex flex-col lg:flex-row gap-6 justify-center items-stretch"
+          className="flex flex-col lg:flex-row gap-4 sm:gap-6 justify-center items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -165,7 +170,7 @@ const Contact = () => {
         >
           {/* Profile Card */}
           <motion.div
-            className="bg-gray-800/30 backdrop-blur-md p-4 rounded-xl shadow-lg w-full lg:w-1/3 text-center border border-gray-600/50 flex flex-col"
+            className="bg-gray-800/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-lg w-full lg:w-1/3 text-center border border-gray-600/50 flex flex-col"
             variants={itemVariants}
           >
             <div className="flex justify-center z-10 relative py-2 mx-auto">
@@ -173,7 +178,7 @@ const Contact = () => {
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="relative w-32 h-32 rounded-full overflow-hidden flex items-center justify-center"
+                className="relative w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 rounded-full overflow-hidden flex items-center justify-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full animate-pulse-slow" />
                 <div className="absolute inset-1 bg-gray-800 rounded-full" />
@@ -186,28 +191,28 @@ const Contact = () => {
             </div>
 
             <motion.h3
-              className="text-xl font-semibold mt-2"
+              className="text-lg sm:text-xl font-semibold mt-2"
               variants={itemVariants}
             >
               Sourav Debnath
             </motion.h3>
 
             <motion.p
-              className="text-teal-400 text-sm font-medium"
+              className="text-teal-400 text-xs sm:text-sm font-medium"
               variants={itemVariants}
             >
               MERN Stack Developer
             </motion.p>
 
             <motion.p
-              className="text-gray-300 text-sm mt-1"
+              className="text-gray-300 text-xs sm:text-sm mt-1"
               variants={itemVariants}
             >
               Available for freelance work!
             </motion.p>
 
             <motion.div
-              className="mt-3 space-y-2 text-gray-300 text-sm"
+              className="mt-3 space-y-2 text-gray-300 text-xs sm:text-sm"
               variants={itemVariants}
             >
               <motion.a
@@ -217,11 +222,11 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <motion.div
-                  className="w-6 h-6 bg-teal-500/20 rounded-full flex items-center justify-center text-teal-400 group-hover:bg-teal-400 group-hover:text-white transition-all"
+                  className="w-5 sm:w-6 h-5 sm:h-6 bg-teal-500/20 rounded-full flex items-center justify-center text-teal-400 group-hover:bg-teal-400 group-hover:text-white transition-all"
                   whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                   transition={{ duration: 0.4 }}
                 >
-                  <FaPhone size={14} />
+                  <FaPhone size={12} />
                 </motion.div>
                 <span>+880 1903038653</span>
               </motion.a>
@@ -233,18 +238,18 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <motion.div
-                  className="w-6 h-6 bg-teal-500/20 rounded-full flex items-center justify-center text-teal-400 group-hover:bg-teal-400 group-hover:text-white transition-all"
+                  className="w-5 sm:w-6 h-5 sm:h-6 bg-teal-500/20 rounded-full flex items-center justify-center text-teal-400 group-hover:bg-teal-400 group-hover:text-white transition-all"
                   whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                   transition={{ duration: 0.4 }}
                 >
-                  <FaEnvelope size={14} />
+                  <FaEnvelope size={12} />
                 </motion.div>
                 <span className="truncate">sdsouravdebnath26@gmail.com</span>
               </motion.a>
             </motion.div>
 
             <motion.div
-              className="mt-3 flex justify-center gap-3"
+              className="mt-3 flex justify-center gap-2 sm:gap-3"
               variants={itemVariants}
             >
               <motion.a
@@ -253,14 +258,14 @@ const Contact = () => {
                 href="https://www.facebook.com/Sourav.Debnath.246"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700/50 p-2 rounded-full hover:bg-blue-600 transition-all duration-300"
+                className="bg-gray-700/50 p-2 sm:p-2.5 rounded-full hover:bg-blue-600 transition-all duration-300"
                 whileHover={{
                   y: -3,
                   boxShadow: "0 6px 10px rgba(59, 130, 246, 0.3)",
                 }}
                 whileTap={{ y: 0 }}
               >
-                <FaFacebookF size={14} />
+                <FaFacebookF size={12} />
               </motion.a>
 
               <motion.a
@@ -269,14 +274,14 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/sourav-debnath-5b43902b7/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700/50 p-2 rounded-full hover:bg-blue-700 transition-all duration-300"
+                className="bg-gray-700/50 p-2 sm:p-2.5 rounded-full hover:bg-blue-700 transition-all duration-300"
                 whileHover={{
                   y: -3,
                   boxShadow: "0 6px 10px rgba(29, 78, 216, 0.3)",
                 }}
                 whileTap={{ y: 0 }}
               >
-                <FaLinkedinIn size={14} />
+                <FaLinkedinIn size={12} />
               </motion.a>
 
               <motion.a
@@ -285,21 +290,21 @@ const Contact = () => {
                 href="https://github.com/SouravDn-p"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700/50 p-2 rounded-full hover:bg-gray-900 transition-all duration-300"
+                className="bg-gray-700/50 p-2 sm:p-2.5 rounded-full hover:bg-gray-900 transition-all duration-300"
                 whileHover={{
                   y: -3,
                   boxShadow: "0 6px 10px rgba(0, 0, 0, 0.3)",
                 }}
                 whileTap={{ y: 0 }}
               >
-                <FaGithub size={14} />
+                <FaGithub size={12} />
               </motion.a>
             </motion.div>
 
             <motion.div className="mt-3" variants={itemVariants}>
               <motion.a
                 href="mailto:sdsouravdebnath26@gmail.com"
-                className="inline-block bg-teal-500 px-4 py-2 rounded-lg text-white text-sm font-medium shadow-md shadow-teal-500/20 hover:bg-teal-400 transition-all duration-300"
+                className="inline-block bg-teal-500 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white text-xs sm:text-sm font-medium shadow-md shadow-teal-500/20 hover:bg-teal-400 transition-all duration-300"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 6px 15px rgba(45, 212, 191, 0.3)",
@@ -307,7 +312,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="flex items-center gap-1">
-                  <FaEnvelope size={14} /> Email Me
+                  <FaEnvelope size={12} /> Email Me
                 </span>
               </motion.a>
             </motion.div>
@@ -315,7 +320,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div
-            className="bg-gray-800/30 backdrop-blur-md p-6 rounded-xl shadow-lg w-full lg:w-2/3 border border-gray-600/50 relative overflow-hidden"
+            className="bg-gray-800/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-lg w-full lg:w-2/3 border border-gray-600/50 relative overflow-hidden"
             variants={itemVariants}
           >
             {/* Success message overlay */}
@@ -333,10 +338,10 @@ const Contact = () => {
                     exit={{ scale: 0 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    <FaCheckCircle className="text-teal-400 text-4xl mb-2" />
+                    <FaCheckCircle className="text-teal-400 text-3xl sm:text-4xl mb-2" />
                   </motion.div>
                   <motion.p
-                    className="text-gray-300 text-sm text-center"
+                    className="text-gray-300 text-xs sm:text-sm text-center px-4"
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
@@ -349,7 +354,7 @@ const Contact = () => {
 
             <form ref={formRef} onSubmit={handleSubmit}>
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-3"
+                className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"
                 variants={containerVariants}
               >
                 <motion.div variants={itemVariants} className="relative">
@@ -359,7 +364,7 @@ const Contact = () => {
                     value={formState.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-sm ${
+                    className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-xs sm:text-sm ${
                       formErrors.name
                         ? "border-red-500 focus:ring-red-500/50"
                         : ""
@@ -371,7 +376,7 @@ const Contact = () => {
                   />
                   {formErrors.name && (
                     <motion.p
-                      className="text-red-500 text-xs mt-1 ml-1"
+                      className="text-red-500 text-xs sm:text-xs mt-1 ml-1"
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
                     >
@@ -387,7 +392,7 @@ const Contact = () => {
                     value={formState.phone}
                     onChange={handleChange}
                     placeholder="Phone Number"
-                    className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-sm"
+                    className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-xs sm:text-sm"
                     variants={inputVariants}
                     initial="rest"
                     whileHover="hover"
@@ -396,14 +401,17 @@ const Contact = () => {
                 </motion.div>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mt-3 relative">
+              <motion.div
+                variants={itemVariants}
+                className="mt-3 sm:mt-4 relative"
+              >
                 <motion.input
                   type="email"
                   name="email"
                   value={formState.email}
                   onChange={handleChange}
                   placeholder="Email"
-                  className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-sm ${
+                  className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-xs sm:text-sm ${
                     formErrors.email
                       ? "border-red-500 focus:ring-red-500/50"
                       : ""
@@ -415,7 +423,7 @@ const Contact = () => {
                 />
                 {formErrors.email && (
                   <motion.p
-                    className="text-red-500 text-xs mt-1 ml-1"
+                    className="text-red-500 text-xs sm:text-xs mt-1 ml-1"
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -424,14 +432,14 @@ const Contact = () => {
                 )}
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mt-3">
+              <motion.div variants={itemVariants} className="mt-3 sm:mt-4">
                 <motion.input
                   type="text"
                   name="subject"
                   value={formState.subject}
                   onChange={handleChange}
                   placeholder="Subject"
-                  className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-sm"
+                  className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-xs sm:text-sm"
                   variants={inputVariants}
                   initial="rest"
                   whileHover="hover"
@@ -439,13 +447,16 @@ const Contact = () => {
                 />
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mt-3 relative">
+              <motion.div
+                variants={itemVariants}
+                className="mt-3 sm:mt-4 relative"
+              >
                 <motion.textarea
                   name="message"
                   value={formState.message}
                   onChange={handleChange}
                   placeholder="Your Message"
-                  className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-sm h-24 resize-none ${
+                  className={`w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg focus:outline-none text-xs sm:text-sm h-20 sm:h-24 resize-none ${
                     formErrors.message
                       ? "border-red-500 focus:ring-red-500/50"
                       : ""
@@ -457,7 +468,7 @@ const Contact = () => {
                 />
                 {formErrors.message && (
                   <motion.p
-                    className="text-red-500 text-xs mt-1 ml-1"
+                    className="text-red-500 text-xs sm:text-xs mt-1 ml-1"
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -466,11 +477,11 @@ const Contact = () => {
                 )}
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mt-4">
+              <motion.div variants={itemVariants} className="mt-4 sm:mt-6">
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="relative overflow-hidden bg-teal-500 px-6 py-2 rounded-lg text-white text-sm font-medium shadow-md shadow-teal-500/20 w-full md:w-auto flex items-center justify-center gap-2 disabled:opacity-70"
+                  className="relative overflow-hidden bg-teal-500 px-4 sm:px-6 py-2 rounded-lg text-white text-xs sm:text-sm font-medium shadow-md shadow-teal-500/20 w-full md:w-auto flex items-center justify-center gap-2 disabled:opacity-70"
                   variants={buttonVariants}
                   initial="rest"
                   whileHover="hover"
@@ -492,7 +503,7 @@ const Contact = () => {
                   ) : (
                     <>
                       <span>Send Message</span>
-                      <FaPaperPlane size={14} />
+                      <FaPaperPlane size={12} />
                     </>
                   )}
                 </motion.button>

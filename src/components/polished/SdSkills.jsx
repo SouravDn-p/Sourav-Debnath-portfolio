@@ -7,7 +7,6 @@ import {
   FaServer,
   FaDatabase,
   FaPalette,
-  FaAws,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -16,9 +15,8 @@ import {
   SiTailwindcss,
   SiNextdotjs,
   SiTypescript,
-  SiGraphql,
 } from "react-icons/si";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, scale } from "framer-motion";
 
 // Animation variants for category buttons
 const buttonVariants = {
@@ -79,7 +77,6 @@ const barVariants = {
 };
 
 const SdSkills = () => {
-  const canvasRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [animatingOut, setAnimatingOut] = useState(false);
 
@@ -184,127 +181,6 @@ const SdSkills = () => {
     }, 300);
   };
 
-  // Canvas effect (unchanged)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    let animationFrameId;
-
-    const setCanvasDimensions = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = document.getElementById("skills").offsetHeight;
-    };
-
-    setCanvasDimensions();
-    window.addEventListener("resize", setCanvasDimensions);
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
-      gradient.addColorStop(1, "rgba(124, 58, 237, 0.1)");
-      gradient.addColorStop(0.5, "rgba(20, 25, 45, 1)");
-      gradient.addColorStop(1, "rgba(124, 58, 237, 0.1)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      const time = Date.now() * 0.0005;
-      ctx.strokeStyle = "rgba(65, 105, 225, 0.07)";
-      ctx.lineWidth = 0.5;
-
-      const gridSize = 50;
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        for (let x = 0; x < canvas.width; x += 5) {
-          const waveOffset = Math.sin(x * 0.01 + time) * 3;
-          ctx.lineTo(x, y + waveOffset);
-        }
-        ctx.stroke();
-      }
-
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        for (let y = 0; y < canvas.height; y += 5) {
-          const waveOffset = Math.sin(y * 0.01 + time) * 3;
-          ctx.lineTo(x + waveOffset, y);
-        }
-        ctx.stroke();
-      }
-
-      const glowTime = Date.now() * 0.001;
-      const glowSize = 250 + Math.sin(glowTime) * 50;
-
-      const glow1 = ctx.createRadialGradient(
-        canvas.width * 0.2,
-        canvas.height * 0.3,
-        0,
-        canvas.width * 0.2,
-        canvas.height * 0.3,
-        glowSize
-      );
-      glow1.addColorStop(0, "rgba(65, 105, 225, 0.08)");
-      glow1.addColorStop(1, "rgba(65, 105, 225, 0)");
-
-      ctx.fillStyle = glow1;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      const glow2 = ctx.createRadialGradient(
-        canvas.width * 0.8,
-        canvas.height * 0.7,
-        0,
-        canvas.width * 0.8,
-        canvas.height * 0.7,
-        glowSize * 0.8
-      );
-      glow2.addColorStop(0, "rgba(128, 0, 128, 0.06)");
-      glow2.addColorStop(1, "rgba(128, 0, 128, 0)");
-
-      ctx.fillStyle = glow2;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      const glow3 = ctx.createRadialGradient(
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        0,
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        glowSize * 0.6
-      );
-      glow3.addColorStop(0, "rgba(0, 128, 128, 0.04)");
-      glow3.addColorStop(1, "rgba(0, 128, 128, 0)");
-
-      ctx.fillStyle = glow3;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      const particleCount = 50;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-
-      for (let i = 0; i < particleCount; i++) {
-        const x = (Math.sin(time * (i * 0.1) + i) * 0.5 + 0.5) * canvas.width;
-        const y = (Math.cos(time * (i * 0.1) + i) * 0.5 + 0.5) * canvas.height;
-        const size = Math.sin(time + i) * 1.5 + 2.5;
-
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", setCanvasDimensions);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
   const colorClasses = {
     blue: "bg-blue-500/10 border-blue-500/20",
     emerald: "bg-emerald-500/10 border-emerald-500/20",
@@ -321,7 +197,6 @@ const SdSkills = () => {
       className="relative text-white py-20 px-6 overflow-hidden min-h-screen"
     >
       {/* Canvas Background */}
-      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Content */}
       <div className="relative z-20 container mx-auto">
@@ -344,7 +219,7 @@ const SdSkills = () => {
               initial="initial"
               animate={activeCategory === category.id ? "active" : "inactive"}
               whileHover="hover"
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.8 }}
               className={`
                 relative flex items-center gap-2 px-8 py-4 rounded-full 
                 backdrop-blur-md transition-all duration-500
@@ -358,21 +233,21 @@ const SdSkills = () => {
                           : category.id === "database"
                           ? "amber"
                           : "purple"
-                      }-500/30`
+                      }-600`
                     : "shadow-none"
                 }
                 ${
                   activeCategory === category.id
                     ? `bg-gradient-to-r ${
                         category.id === "frontend"
-                          ? "from-blue-900/80 to-blue-800/40"
+                          ? "from-blue-900 to-blue-800/80"
                           : category.id === "backend"
                           ? "from-emerald-900/80 to-emerald-800/40"
                           : category.id === "database"
-                          ? "from-amber-900/80 to-amber-800/40"
+                          ? "from-amber-900/80 to-amber-800/60"
                           : "from-purple-900/80 to-purple-800/40"
                       }`
-                    : "bg-gray-900/50 hover:bg-gray-800/50"
+                    : "bg-gray-700/50 hover:bg-gray-800/50"
                 }
               `}
             >
@@ -441,7 +316,7 @@ const SdSkills = () => {
                 whileHover="hover"
                 custom={index}
                 className={`
-                  relative bg-slate-900/80 backdrop-blur-lg p-8 
+                  relative bg-[#5134b9] backdrop-blur-lg p-8 
                   rounded-2xl flex flex-col items-center text-center 
                   perspective-1000
                 `}
@@ -457,7 +332,7 @@ const SdSkills = () => {
                   transition={{ duration: 0.5 }}
                 ></motion.div>
 
-                {/* Skill level indicator */}
+                {/* Skill level indicator
                 <div className="absolute -top-3 -right-3 flex items-center justify-center">
                   <svg className="w-24 h-24" viewBox="0 0 100 100">
                     <circle
@@ -512,7 +387,7 @@ const SdSkills = () => {
                       {skill.proficiency}%
                     </text>
                   </svg>
-                </div>
+                </div> */}
 
                 {/* Category badges */}
                 <div className="absolute top-3 left-3 flex gap-1">
@@ -545,7 +420,7 @@ const SdSkills = () => {
                   whileHover="hover"
                   className={`
                     relative z-10 p-6 rounded-full 
-                    bg-gradient-to-br from-slate-800/80 to-slate-900/80 
+                    bg-gradient-to-br from-teal-800 to-teal-900 
                   `}
                 >
                   {skill.icon}

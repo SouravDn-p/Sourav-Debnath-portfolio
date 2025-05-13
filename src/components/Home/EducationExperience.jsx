@@ -146,14 +146,14 @@ const EducationExperience = () => {
   return (
     <section
       id="education"
-      className="relative text-white py-24 px-6 overflow-hidden  glass "
+      className="relative text-white py-24 md:px-6 overflow-hidden  glass "
       ref={containerRef}
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Floating gradient orbs with parallax effect */}
         <motion.div
-          className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-green-500/5 blur-[100px]"
+          className="absolute top-20 md:left-[10%] w-64 h-64 rounded-full bg-green-500/5 blur-[100px]"
           style={{ y: y1 }}
           animate={{
             opacity: [0.5, 0.7, 0.5],
@@ -194,10 +194,10 @@ const EducationExperience = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-100 max-w-6xl mx-auto">
         {/* Section Title */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 "
           ref={titleRef}
           initial={{ opacity: 0, y: 30 }}
           animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -214,14 +214,14 @@ const EducationExperience = () => {
         </motion.div>
 
         {/* Tab Selector */}
-        <div className="flex justify-center mb-12">
-          <div className="backdrop-blur-sm p-1 rounded-full border border-gray-700 flex shadow-xl shadow-black/20">
+        <div className="flex justify-center mx-12 mb-12">
+          <div className="backdrop-blur-sm p-1 rounded-md md:rounded-full md:border border-gray-700 md:flex shadow-xl shadow-black/20">
             <button
               onClick={() => setActiveTab("experience")}
               className={`px-6 py-3 rounded-full transition-all duration-300 ${
                 activeTab === "experience"
                   ? "bg-gradient-to-r from-green-500/20 to-cyan-500/20 text-white shadow-inner"
-                  : "text-gray-400 "
+                  : "text-gray-400"
               }`}
             >
               <div className="flex items-center gap-2">
