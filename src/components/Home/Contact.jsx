@@ -216,7 +216,7 @@ const Contact = () => {
               variants={itemVariants}
             >
               <motion.a
-                href="tel:+8801903038653"
+                href="tel:+8801328764976"
                 className="flex items-center justify-center gap-2 py-1 px-3 rounded-lg hover:bg-gray-700/50 transition-all group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -228,7 +228,7 @@ const Contact = () => {
                 >
                   <FaPhone size={12} />
                 </motion.div>
-                <span>+880 1903038653</span>
+                <span>+880 1328764976</span>
               </motion.a>
 
               <motion.a

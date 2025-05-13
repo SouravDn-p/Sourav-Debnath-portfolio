@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { FaArrowRight, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import {
   SiReact,
@@ -95,12 +94,11 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative text-white py-16 px-6 overflow-hidden"
+      className="relative text-white py-16 md:px-6 overflow-hidden p-2"
     >
       {/* Overlay for readability */}
-
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 ">
         <motion.h2
           className="text-3xl font-bold mb-1 text-center"
           initial={{ opacity: 0, y: -10 }}
@@ -108,7 +106,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <div className="relative bg-gray-900/60 border border-cyan-500/30 rounded-xl p-6 shadow-xl mb-12">
+          <div className="relative bg-gray-900/60 border border-cyan-500/30 rounded-xl p-4 md:p-6 shadow-xl mb-12">
             <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 text-center">
               My Projects
             </h2>
@@ -200,7 +198,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           className={`
                             flex items-center gap-2 px-4 py-2 rounded-full
-                            bg-${project.color}-500/20 border border-${project.color}-500/50
+                            bg-teal-600 border border-${project.color}-500/50
                             text-white
                           `}
                         >

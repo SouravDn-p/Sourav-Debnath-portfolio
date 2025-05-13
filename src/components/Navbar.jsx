@@ -9,31 +9,10 @@ import {
   FiUser,
   FiZap,
 } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
-import { FiX, FiHeart } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  // eslint-disable-next-line react/prop-types
-  // const NavItem = ({ to, children, onClick = () => {} }) => (
-  //   <a
-  //     href={to}
-  //     onClick={onClick}
-  //     className={({ isActive }) =>
-  //       `relative px-4 py-2 rounded-lg transition-all duration-200
-  //         hover:bg-teal-400 hover:text-white dark:hover:bg-teal-800
-  //         flex items-center gap-2
-  //         ${isActive ? "text-blue-600 dark:text-blue-400 font-medium" : ""}
-  //         after:content-[''] after:absolute after:bottom-0 after:left-0
-  //         after:w-full after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400
-  //         after:scale-x-0 hover:after:scale-x-100 after:transition-transform
-  //         ${isActive ? "after:scale-x-100" : ""}`
-  //     }
-  //   >
-  //     {children}
-  //   </a>
-  // );
 
   // eslint-disable-next-line react/prop-types
   const NavItem = ({ to, children, onClick = () => {} }) => (
@@ -73,6 +52,7 @@ const Navbar = () => {
           {/* Logo */}
           <button className="flex items-center justify-center p-1 rounded-full transition-all duration-300 hover:scale-110 relative">
             <img
+              href="#home"
               src={SDImage}
               alt="Profile"
               className="w-12 h-12 rounded-full border-2 border-pink-400 transition-all duration-300 hover:border-purple-400"
@@ -81,7 +61,8 @@ const Navbar = () => {
           </button>
           <a
             href="#home"
-            className="btn btn-ghost text-2xl font-bold text-teal-400"
+            className="btn btn-ghost text-2xl font-bold text-teal-400 -center hidden  
+            md:hidden"
           >
             Sourav.
           </a>

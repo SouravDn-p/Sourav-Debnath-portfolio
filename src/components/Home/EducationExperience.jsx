@@ -218,7 +218,7 @@ const EducationExperience = () => {
           <div className="backdrop-blur-sm p-1 rounded-md md:rounded-full md:border border-gray-700 md:flex shadow-xl shadow-black/20">
             <button
               onClick={() => setActiveTab("experience")}
-              className={`px-6 py-3 rounded-full transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full ml-2 md:ml-0 transition-all duration-300 ${
                 activeTab === "experience"
                   ? "bg-gradient-to-r from-green-500/20 to-cyan-500/20 text-white shadow-inner"
                   : "text-gray-400"
@@ -233,7 +233,7 @@ const EducationExperience = () => {
             </button>
             <button
               onClick={() => setActiveTab("education")}
-              className={`px-6 py-3 rounded-full transition-all duration-300 ${
+              className={`px-6 ml-2 md:ml-0 py-3 rounded-full transition-all duration-300 ${
                 activeTab === "education"
                   ? "bg-gradient-to-r from-green-500/20 to-cyan-500/20 text-white shadow-inner"
                   : "text-gray-400 hover:text-gray-200"
