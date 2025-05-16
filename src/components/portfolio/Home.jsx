@@ -1,15 +1,12 @@
-import { motion } from "framer-motion";
-import Projects from "./Projects";
-import About from "./About";
-import EducationExperience from "./EducationExperience";
-import Contact from "./Contact";
-import Footer from "../Footer";
-import SdSkills from "../polished/SdSkills";
-import AboutMe from "../polished/AboutMe";
-import SouravBanner from "./HeroSections/SouravBanner";
-import HomeContent from "./HomeContent";
 import projectsBackgroundImage from "../../assets/sourav_parallex.png";
-import SkillsShowcase from "./HeroSections/SkillsShowcase";
+import SouravBanner from "./SouravBanner";
+import About from "./About";
+import SkillsShowcase from "./SkillsShowcase";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import Education from "./Education";
+import Projects from "./Projects";
+import { motion } from "framer-motion";
 
 const Home = () => {
   // Animation variants for smooth transitions
@@ -28,7 +25,11 @@ const Home = () => {
       <SouravBanner />
 
       {/* About Me Section */}
-      <AboutMe />
+      <About />
+
+      <Education />
+
+      {/* <SdProjects /> */}
 
       {/* Skills Section */}
       <div
@@ -45,6 +46,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-green-900/30 to-gray-900/70"></div>
         <div className="relative z-10">
           <SkillsShowcase />
+          <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm"></div>
         </div>
       </div>
 
@@ -52,25 +54,6 @@ const Home = () => {
       <div className="h-16 bg-gradient-to-b from-gray-900 to-gray-800 flex items-center justify-center">
         <div className="w-16 h-1 bg-green-400 rounded-full"></div>
       </div>
-
-      {/* Education & Experience */}
-
-      <motion.section
-        className="relative"
-        style={{
-          backgroundImage: `url(${projectsBackgroundImage})`,
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Cyan Overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-cyan-900/30 to-gray-900/70"></div>
-        <div className="relative z-10">
-          <EducationExperience />
-        </div>
-      </motion.section>
 
       {/* Projects Section with Background and Overlay */}
       <motion.section
@@ -105,10 +88,6 @@ const Home = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
       >
         {/* Green Overlay */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-green-900/30 to-gray-900/70"></div>
@@ -117,7 +96,6 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

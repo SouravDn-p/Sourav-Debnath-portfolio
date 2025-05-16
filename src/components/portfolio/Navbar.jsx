@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-import SDImage from "../assets/sourav.jpg";
+import SDImage from "../../assets/sourav.jpg";
 import {
   FiBookOpen,
   FiFolder,
@@ -62,7 +62,7 @@ const Navbar = () => {
           <a
             href="#home"
             className="btn btn-ghost text-2xl font-bold text-teal-400 -center hidden  
-            md:hidden"
+            sm:block"
           >
             Sourav.
           </a>

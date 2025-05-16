@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Home from "./components/Home/Home.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Main from "./components/layout/Main.jsx";
-import ErrorPage from "./components/ErrorPage.jsx";
+import Home from "./components/portfolio/Home.jsx";
+import Main from "./layout/Main.jsx";
+import ErrorPage from "./components/shared/Errorpage.jsx";
 
 const router = createBrowserRouter([
   {

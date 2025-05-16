@@ -13,9 +13,8 @@ import Particles from "react-tsparticles";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useLocation } from "react-router-dom";
-import SDImage from "../assets/SD.png";
+import SDImage from "../../assets/SD.png";
 
-// Social Media Icons
 // eslint-disable-next-line react/display-name
 const SocialLinks = React.memo(() => {
   const links = [

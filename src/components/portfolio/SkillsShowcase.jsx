@@ -17,6 +17,7 @@ import {
   SiTailwindcss,
   SiNextdotjs,
   SiTypescript,
+  SiJavascript,
 } from "react-icons/si";
 
 // Animation variants
@@ -125,7 +126,7 @@ const SkillsShowcase = () => {
       proficiency: 80,
       categories: ["database", "backend"],
       description:
-        "Platformmon for building web and mobile applications without server-side code",
+        "Platform for building web and mobile applications without server-side code",
     },
     {
       id: 5,
@@ -149,26 +150,37 @@ const SkillsShowcase = () => {
       description:
         "Utility-first CSS framework for rapidly building custom designs",
     },
+    // {
+    //   id: 7,
+    //   name: "Next.js",
+    //   icon: <SiNextdotjs size={40} className="text-gray-200" />,
+    //   projects: "28+ Projects",
+    //   color: "gray",
+    //   proficiency: 88,
+    //   categories: ["frontend", "backend"],
+    //   description: "React framework for production with server-side rendering",
+    // },
+    // {
+    //   id: 8,
+    //   name: "TypeScript",
+    //   icon: <SiTypescript size={40} className="text-blue-500" />,
+    //   projects: "32+ Projects",
+    //   color: "blue",
+    //   proficiency: 85,
+    //   categories: ["frontend", "backend"],
+    //   description:
+    //     "Strongly typed programming language that builds on JavaScript",
+    // },
     {
-      id: 7,
-      name: "Next.js",
-      icon: <SiNextdotjs size={40} className="text-gray-200" />,
-      projects: "28+ Projects",
-      color: "gray",
-      proficiency: 88,
-      categories: ["frontend", "backend"],
-      description: "React framework for production with server-side rendering",
-    },
-    {
-      id: 8,
-      name: "TypeScript",
-      icon: <SiTypescript size={40} className="text-blue-500" />,
-      projects: "32+ Projects",
-      color: "blue",
-      proficiency: 85,
+      id: 9,
+      name: "JavaScript",
+      icon: <SiJavascript size={40} className="text-yellow-400" />,
+      projects: "60+ Projects",
+      color: "yellow",
+      proficiency: 97,
       categories: ["frontend", "backend"],
       description:
-        "Strongly typed programming language that builds on JavaScript",
+        "High-level, versatile scripting language used to create dynamic web applications",
     },
   ];
 
@@ -311,7 +323,7 @@ const SkillsShowcase = () => {
 
         {/* Category Filter */}
         <motion.div
-          className="grid grid-cols-1 md:flex md:flex-wrap text-md md:text-xl justify-center gap-3 mb-16"
+          className="grid grid-cols-1  md:flex md:flex-wrap text-md md:text-xl justify-center gap-3 mb-16"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -323,7 +335,6 @@ const SkillsShowcase = () => {
               variants={categoryVariants}
               initial="initial"
               animate={activeCategory === category.id ? "active" : "inactive"}
-              whileHover="hover"
               whileTap={{ scale: 0.95 }}
               className={`
                 relative flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full 
@@ -335,22 +346,6 @@ const SkillsShowcase = () => {
                 }
               `}
             >
-              {/* Animated indicator dot */}
-              {activeCategory === category.id && (
-                <motion.div
-                  className="absolute left-2 w-2 h-2 rounded-full bg-purple-400"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.7, 1, 0.7],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              )}
-
               <span
                 className={`text-xl ${
                   activeCategory === category.id
@@ -448,7 +443,7 @@ const SkillsShowcase = () => {
                           }}
                           transition={{
                             duration: 2,
-                            repeat: Number.POSITIVE_INFINITY,
+                            // repeat: Number.POSITIVE_INFINITY,
                             delay: i * 0.5,
                             ease: "easeOut",
                           }}
@@ -466,7 +461,7 @@ const SkillsShowcase = () => {
                     </p>
 
                     {/* Skill description */}
-                    <p className="text-gray-300 text-sm mb-4">
+                    <p className="hidden md:block text-gray-300 text-sm mb-4">
                       {skill.description}
                     </p>
                   </div>

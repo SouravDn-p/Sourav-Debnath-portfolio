@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "sourav-debnath-246"
-  }
+    "dist": "sourav-debnath-246"
+  },
+  "targets": {},
+  "etags": {}
 }

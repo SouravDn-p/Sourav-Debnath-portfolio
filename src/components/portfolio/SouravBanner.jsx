@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import SDImage from "../../../assets/sourav.jpg";
+import SDImage from "../../assets/sourav.jpg";
+import { motion } from "framer-motion";
 
 const SouravBanner = () => {
   const canvasRef = useRef(null);
