@@ -39,10 +39,10 @@ const Navbar = () => {
           <div className="dropdown">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="btn btn-ghost lg:hidden"
+              className="btn btn-ghost hover:bg-purple-950 lg:hidden"
             >
               {isOpen ? (
-                <FiX className="text-white text-xl" />
+                <FiX className="text-white  text-xl" />
               ) : (
                 <FaBars className="text-white text-xl" />
               )}

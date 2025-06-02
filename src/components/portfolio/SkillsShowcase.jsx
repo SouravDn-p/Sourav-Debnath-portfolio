@@ -36,7 +36,7 @@ const categoryVariants = {
   initial: { scale: 1, opacity: 0.8 },
   hover: { scale: 1.05, opacity: 1, transition: { duration: 0.3 } },
   active: {
-    scale: 1.1,
+    scale: 1.05,
     transition: { type: "spring", stiffness: 300, damping: 20 },
   },
   inactive: { scale: 1, opacity: 0.8 },
@@ -323,7 +323,7 @@ const SkillsShowcase = () => {
 
         {/* Category Filter */}
         <motion.div
-          className="grid grid-cols-1  md:flex md:flex-wrap text-md md:text-xl justify-center gap-3 mb-16"
+          className="grid grid-cols-2 m-4  md:m-0 md:flex md:flex-wrap text-md md:text-xl justify-center gap-3 mb-16"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -376,7 +376,7 @@ const SkillsShowcase = () => {
             animate="visible"
             exit="hidden"
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
+            className="grid grid-cols-1 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
           >
             {filteredSkills.map((skill, index) => {
               const colorClasses = getColorClasses(skill.color);

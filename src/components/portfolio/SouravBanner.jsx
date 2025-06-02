@@ -288,9 +288,13 @@ const SouravBanner = () => {
             technologies.
           </p>
           <div className="mt-4 md:mt-6">
-            <button className="bg-teal-600 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-md text-white hover:bg-purple-900 transition duration-300 shadow-purple-400 text-sm md:text-base border border-white/10">
+            <a
+              href="../../../public/Resume.pdf"
+              download
+              className="bg-teal-600 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-md text-white hover:bg-purple-900 transition duration-300 shadow-purple-400 text-sm md:text-base border border-white/10"
+            >
               Download CV
-            </button>
+            </a>
           </div>
           <div className="mt-4 md:mt-6 flex justify-center lg:justify-start space-x-4 md:space-x-6">
             <a

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExternalLink, Eye , Github } from "lucide-react";
+import { ExternalLink, Eye, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import souravBg from "../../assets/sourav_parallex.png";
 
@@ -187,9 +187,9 @@ const Projects = () => {
               className="group relative h-[600px] overflow-hidden rounded-xl shadow-lg transition-all duration-500 bg-gray-900/30 backdrop-blur-sm"
             >
               <div
-                className="absolute inset-0 transition-transform duration-[2s] ease-in-out group-hover:translate-y-[-70%]"
+                className="absolute inset-0 transition-transform duration-[2s] ease-in-out group-hover:translate-y-[-30%]"
                 style={{
-                  height: "170%",
+                  height: "130%",
                 }}
               >
                 <img
