@@ -96,7 +96,9 @@ export function FloatingNav() {
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
               >
-                Resume
+                <a href="/resume.pdf" download>
+                  Resume
+                </a>
               </Button>
             </div>
           )}
@@ -125,7 +127,9 @@ export function FloatingNav() {
               </Link>
             ))}
             <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
-              Resume
+              <a href="/resume.pdf" download>
+                Resume
+              </a>
             </Button>
           </div>
         </motion.div>

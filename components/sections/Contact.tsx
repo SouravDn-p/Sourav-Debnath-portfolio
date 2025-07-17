@@ -45,7 +45,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-zinc-500">GitHub</div>
-                  <div className="font-medium">github.com/Souravkyaw</div>
+                  <div className="font-medium">
+                    github.com/https://github.com/SouravDn-p
+                  </div>
                 </div>
               </div>
             </div>

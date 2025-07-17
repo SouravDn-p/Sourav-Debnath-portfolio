@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
-import sdImage from "@/public/Sourav.png";
+import sdImage from "@/public/Sourav Debnath Photo.jpg";
 
 import { Button } from "@/components/ui/button";
 import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
-import { ContactForm } from "@/components/contact-form";
 import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
 import { MouseFollower } from "@/components/mouse-follower";
@@ -160,7 +159,7 @@ export default function Portfolio() {
                 <Image
                   src={sdImage}
                   alt="Sourav Debnath "
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-6">
@@ -219,7 +218,9 @@ export default function Portfolio() {
 
                 <div className="mt-8">
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
-                    Download Resume
+                    <a href="/resume.pdf" download>
+                      Download Resume
+                    </a>
                   </Button>
                 </div>
               </GlassmorphicCard>

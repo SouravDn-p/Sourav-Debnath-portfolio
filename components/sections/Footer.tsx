@@ -8,14 +8,11 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { loadFull } from "tsparticles";
-import Particles from "react-tsparticles";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SDImage from "@/public/Sourav.png";
+import SDImage from "@/public/Sourav Debnath Photo.jpg";
 import { useParams } from "next/navigation";
 import { Button } from "../ui/button";
-import { Engine } from "@tsparticles/engine";
 
 // eslint-disable-next-line react/display-name
 const SocialLinks = React.memo(() => {
@@ -63,7 +60,6 @@ const SocialLinks = React.memo(() => {
 const Footer = () => {
   const location = useParams();
   const currentYear = new Date().getFullYear();
-  const isDarkMode = true;
   const [showParticles, setShowParticles] = useState(false);
 
   // Animate on scroll
@@ -73,46 +69,10 @@ const Footer = () => {
     return () => AOS.refreshHard();
   }, [location.pathname]);
 
-  const particlesInit = useCallback(
-    async (main: Engine) => {
-      try {
-        await loadFull(main);
-      } catch (error) {
-        console.error("Failed to load tsparticles:", error);
-      }
-    },
-    [location]
-  );
-
   return (
     <footer
       className={`relative  backdrop-blur-md border-t border-zinc-800 py-12`}
     >
-      {/* Particles */}
-      {showParticles && (
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: false },
-            background: { color: { value: "transparent" } },
-            particles: {
-              color: { value: isDarkMode ? "#ffffff" : "#2d2d2d" },
-              links: {
-                enable: true,
-                color: isDarkMode ? "#ffffff" : "#0d9488",
-                distance: 100,
-              },
-              move: { enable: true, speed: 1 },
-              number: { value: 100 },
-              size: { value: 3 },
-              opacity: { value: 0.5 },
-            },
-          }}
-          className="absolute inset-0 z-0"
-        />
-      )}
-
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0"></div>
 
@@ -128,7 +88,7 @@ const Footer = () => {
               <img
                 src={SDImage.src}
                 alt="Profile"
-                className="w-12 h-12 rounded-full border-2 border-gray-500"
+                className="w-12 h-12 rounded-full border-2 border-gray-500 object-cover"
               />
               <h2 className="text-2xl font-bold text-white">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
