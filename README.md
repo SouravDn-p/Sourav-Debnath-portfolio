@@ -8,11 +8,9 @@ Welcome to my personal portfolio website! This site showcases my skills, project
 
 🔗 [Visit My Portfolio](https://sourav-debnath-sd246.vercel.app)
 
-> *(Replace the above link with your actual live site URL)*
-
 ## 🧑‍💻 About Me
 
-I'm Sourav Debnath, a Junior Web Developer skilled in **React.js**, **Tailwind CSS**, **Firebase**, and **Node.js**. I build modern, responsive, and user-friendly web applications. My portfolio is a reflection of my development journey and the projects I've built along the way.
+I'm Sourav Debnath, a Junior Web Developer skilled in **React.js**, **Next.js**,**Redux**,**RTK**,**MongoDb**,    **Tailwind CSS**, **Firebase**, and **Node.js**. I build modern, responsive, and user-friendly web applications. My portfolio is a reflection of my development journey and the projects I've built along the way.
 
 ## 📂 Features
 
@@ -36,7 +34,7 @@ I'm Sourav Debnath, a Junior Web Developer skilled in **React.js**, **Tailwind C
 
 If you’d like to work together or have any inquiries:
 
-- Email: sourav@example.com
+- Email: sdsouravdebnath26@gmail.com
 - LinkedIn: [linkedin.com/in/sourav-debnath](https://www.linkedin.com/in/sourav-debnath-5b43902b7)
 
 ---
