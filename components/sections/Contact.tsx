@@ -1,8 +1,17 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import {
+  Facebook,
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  PhoneCall,
+} from "lucide-react";
 import React from "react";
 import { ContactForm } from "../contact-form";
 import { GlassmorphicCard } from "../glassmorphic-card";
 import { SectionHeading } from "../section-heading";
+import SDImage from "@/public/Sourav Debnath Photo.jpg";
+import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -14,18 +23,54 @@ const Contact = () => {
 
       <div className="container relative z-10">
         <SectionHeading title="Get In Touch" subtitle="Let's work together" />
+        <div className=" items-center gap-4 mt-8">
+          <div className="flex flex-col items-center justify-center z-10 relative py-2 mx-auto">
+            <div className="relative w-28 sm:w-32 md:w-40 h-28 sm:h-32 md:h-40 rounded-full overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full animate-pulse-slow" />
+              <div className="absolute inset-1 bg-gray-800 rounded-full" />
+              <Image
+                width={400}
+                height={400}
+                src={SDImage || "/placeholder.svg"}
+                alt="Sourav Debnath"
+                className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full filter brightness-110"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold mt-2">
+                Sourav Debnath
+              </h3>
+
+              <p className="text-teal-400 text-xs sm:text-sm font-medium">
+                MERN Stack Developer
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
           <GlassmorphicCard>
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+
             <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <div className="text-sm text-zinc-500">Phone</div>
+                  <div className="font-medium truncate">+880 1328764976</div>
+                </div>
+              </div>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-purple-400" />
                 </div>
                 <div>
                   <div className="text-sm text-zinc-500">Email</div>
-                  <div className="font-medium">sdsouravdebnath26@gmail.com</div>
+                  <div className="font-medium truncate">
+                    sdsouravdebnath26@gmail.com
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -35,7 +80,7 @@ const Contact = () => {
                 <div>
                   <div className="text-sm text-zinc-500">LinkedIn</div>
                   <div className="font-medium">
-                    linkedin.com/in/SouravDebnath
+                    http://www.linkedin.com/in/souravdebnath246
                   </div>
                 </div>
               </div>
@@ -46,7 +91,7 @@ const Contact = () => {
                 <div>
                   <div className="text-sm text-zinc-500">GitHub</div>
                   <div className="font-medium">
-                    github.com/https://github.com/SouravDn-p
+                    https://github.com/SouravDn-p
                   </div>
                 </div>
               </div>

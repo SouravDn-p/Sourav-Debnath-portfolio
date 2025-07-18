@@ -44,13 +44,18 @@ export default function Portfolio() {
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                Sourav Debnath , A
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 text-3xl  md:text-6xl text-wrap">
+                Sourav Debnath , 
+                <span className="bg-clip-text md:text-6xl text-wrap text-white">
+                {
+                   " "
+                } A
+                </span>
               </span>
             </h1>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl pt-4 font-bold text-purple-400">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl  font-bold text-purple-400 text-wrap">
               <TypeAnimation
                 sequence={[
                   "Junior Web Developer.",
@@ -193,14 +198,14 @@ export default function Portfolio() {
                   staying up-to-date with the latest industry trends.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Name</div>
                     <div className="font-medium">Sourav Debnath </div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">
+                    <div className="font-medium truncate">
                       sdsouravdebnath26@gmail.com
                     </div>
                   </div>
@@ -217,8 +222,8 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
-                    <a href="/resume.pdf" download>
+                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white relative bg-gradient-to-r from-pink-500 to-purple-500">
+                    <a href="/public/resume.pdf" download>
                       Download Resume
                     </a>
                   </Button>
